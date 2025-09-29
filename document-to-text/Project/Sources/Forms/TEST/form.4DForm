@@ -18,7 +18,8 @@
 		"onLoad",
 		"onDrop",
 		"onDragOver",
-		"onUnload"
+		"onUnload",
+		"onSelectionChange"
 	],
 	"windowTitle": "",
 	"destination": "detailScreen",
@@ -58,10 +59,7 @@
 					"top": 60,
 					"width": 238,
 					"height": 345,
-					"events": [
-						"onDrop",
-						"onDragOver"
-					],
+					"events": [],
 					"listboxType": "collection",
 					"dragging": "none",
 					"dropping": "custom",
@@ -101,12 +99,23 @@
 							"resizable": false
 						}
 					]
+				},
+				"text": {
+					"type": "input",
+					"left": 278,
+					"top": 60,
+					"width": 372,
+					"height": 305,
+					"dataSource": "Form:C1466.text",
+					"class": "text",
+					"sizingX": "grow",
+					"sizingY": "grow"
 				}
 			}
 		}
 	],
 	"method": "method.4dm",
-	"geometryStamp": 67,
+	"geometryStamp": 76,
 	"editor": {
 		"activeView": "View 1",
 		"defaultView": "View 1",

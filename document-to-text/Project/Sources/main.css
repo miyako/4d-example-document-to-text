@@ -9,3 +9,13 @@ listbox {
 	verticalLineStroke: transparent;
 	selectionMode: single;
 }
+input.text {
+	stroke: #F0F070;
+	fill:#333333;
+	enterable: false;
+	contextMenu: none;
+	class: text;
+	fontWeight: bold;
+	dragging: none;
+	dropping: none;
+}
