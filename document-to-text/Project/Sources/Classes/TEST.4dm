@@ -79,6 +79,7 @@ Function onFilesDrop() : cs:C1710.TEST
 	End case 
 	
 	Form:C1466.files.col:=$col
+	Form:C1466.text:=""
 	
 	var $extract : cs:C1710.extract.extract
 	var $files; $tasks : Collection

@@ -3,6 +3,10 @@
 		"extract": {
 			"github": "miyako/extract",
 			"version": "latest"
+		},
+		"lx rs": {
+			"github": "miyako/lx-rs",
+			"version": "latest"
 		}
 	}
 }
