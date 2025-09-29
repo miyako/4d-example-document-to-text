@@ -1,0 +1,11 @@
+text.label {
+	color: #9090F0;
+}
+listbox {
+	resizingMode: legacy;
+	sortable: false;
+	alternateFill: automaticAlternate;
+	horizontalLineStroke: transparent;
+	verticalLineStroke: transparent;
+	selectionMode: single;
+}

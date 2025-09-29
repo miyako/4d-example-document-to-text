@@ -1,0 +1,117 @@
+{
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"css": [
+		"/SOURCES/main.css"
+	],
+	"windowSizingX": "variable",
+	"windowSizingY": "variable",
+	"windowMinWidth": 670,
+	"windowMinHeight": 425,
+	"windowMaxWidth": 32767,
+	"windowMaxHeight": 32767,
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"events": [
+		"onLoad",
+		"onDrop",
+		"onDragOver",
+		"onUnload"
+	],
+	"windowTitle": "",
+	"destination": "detailScreen",
+	"pages": [
+		{
+			"objects": {}
+		},
+		{
+			"objects": {
+				"OK": {
+					"type": "button",
+					"text": "OK",
+					"top": 384,
+					"left": 550,
+					"width": 100,
+					"height": 21,
+					"events": [
+						"onClick"
+					],
+					"focusable": false,
+					"sizingX": "move",
+					"sizingY": "move",
+					"action": "accept"
+				},
+				"drag and drop a folder that contains documents": {
+					"type": "text",
+					"text": "drag and drop a folder that contains documents",
+					"top": 20,
+					"left": 20,
+					"width": 299,
+					"height": 16,
+					"class": "label"
+				},
+				"files": {
+					"type": "listbox",
+					"left": 20,
+					"top": 60,
+					"width": 238,
+					"height": 345,
+					"events": [
+						"onDrop",
+						"onDragOver"
+					],
+					"listboxType": "collection",
+					"dragging": "none",
+					"dropping": "custom",
+					"dataSource": "Form:C1466.files.col",
+					"currentItemSource": "Form:C1466.files.item",
+					"currentItemPositionSource": "Form:C1466.files.pos",
+					"selectedItemsSource": "Form:C1466.files.sel",
+					"sizingY": "grow",
+					"columns": [
+						{
+							"header": {
+								"text": "",
+								"name": "Header1"
+							},
+							"name": "Column1",
+							"footer": {
+								"name": "Footer1"
+							},
+							"width": 32,
+							"dataSourceTypeHint": "picture",
+							"dataSource": "This:C1470.icon",
+							"resizable": false,
+							"enterable": false,
+							"pictureFormat": "proportionalCenter"
+						},
+						{
+							"header": {
+								"name": "Header2",
+								"text": "name"
+							},
+							"name": "Column2",
+							"footer": {
+								"name": "Footer2"
+							},
+							"dataSource": "This:C1470.fullName",
+							"enterable": false,
+							"resizable": false
+						}
+					]
+				}
+			}
+		}
+	],
+	"method": "method.4dm",
+	"geometryStamp": 67,
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {}
+		}
+	}
+}
