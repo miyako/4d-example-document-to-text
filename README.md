@@ -8,3 +8,4 @@
 [dependencies](https://github.com/miyako/4d-example-document-to-text/blob/main/document-to-text/Project/Sources/dependencies.json)
 
 * [`miyako/extract`](https://github.com/miyako/extract)
+* [`miyako/lx-rs`](https://github.com/miyako/lx-rs)
