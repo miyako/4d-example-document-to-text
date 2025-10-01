@@ -8,6 +8,6 @@
 [dependencies](https://github.com/miyako/4d-example-document-to-text/blob/main/document-to-text/Project/Sources/dependencies.json)
 
 * [`miyako/extract`](https://github.com/miyako/extract)
-* [`miyako/lx-rs`](https://github.com/miyako/lx-rs)
+* [`miyako/text-splitter`](https://github.com/miyako/text-splitter)
 
 <img width="670" height="453" alt="" src="https://github.com/user-attachments/assets/91882b47-c2bc-445a-9064-bd2d61e2cf54" />
