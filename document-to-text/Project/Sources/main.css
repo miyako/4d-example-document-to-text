@@ -19,3 +19,14 @@ input.text {
 	dragging: none;
 	dropping: none;
 }
+
+input.chunk {
+	stroke: #43e233;
+	fill:#333333;
+	enterable: false;
+	contextMenu: none;
+	class: text;
+	fontWeight: bold;
+	dragging: none;
+	dropping: none;
+}

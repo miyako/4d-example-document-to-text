@@ -4,8 +4,8 @@
 			"github": "miyako/extract",
 			"version": "latest"
 		},
-		"lx rs": {
-			"github": "miyako/lx-rs",
+		"text splitter": {
+			"github": "miyako/text-splitter",
 			"version": "latest"
 		}
 	}

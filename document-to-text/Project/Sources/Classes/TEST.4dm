@@ -10,6 +10,24 @@ Function onUnload() : cs:C1710.TEST
 	
 	return This:C1470
 	
+Function onChunk($worker : 4D:C1709.SystemWorker; $params : Object)
+	
+	var $file : Variant
+	$file:=$params.context
+	
+	var $item : Object
+	$item:=Form:C1466.files.col.query("file.path == :1"; $file.path).first()
+	
+	If ($item#Null:C1517)
+		
+		If ($worker.responseError#"")
+			$item.chunk:=$worker.responseError
+		Else 
+			$item.chunk:=JSON Parse:C1218($worker.response; Is collection:K8:32)
+		End if 
+		
+	End if 
+	
 Function onExtract($worker : 4D:C1709.SystemWorker; $params : Object)
 	
 	var $file : 4D:C1709.File
@@ -24,6 +42,11 @@ Function onExtract($worker : 4D:C1709.SystemWorker; $params : Object)
 			$item.text:=$worker.responseError
 		Else 
 			$item.text:=$worker.response
+			
+			var $text_splitter : cs:C1710.text_splitter.text_splitter
+			$text_splitter:=cs:C1710.text_splitter.text_splitter.new()
+			$text_splitter.chunk({data: $file; file: $item.text; capacity: "100..200"; overlap: 10; tiktoken: True:C214}; Form:C1466.onChunk)
+			
 		End if 
 		
 	End if 
@@ -35,8 +58,10 @@ Function onFilesSelect() : cs:C1710.TEST
 	
 	If ($item=Null:C1517)
 		Form:C1466.text:=""
+		Form:C1466.chunk:=Null:C1517
 	Else 
 		Form:C1466.text:=$item.text
+		Form:C1466.chunk:=$item.chunk
 	End if 
 	
 	return This:C1470
@@ -80,6 +105,7 @@ Function onFilesDrop() : cs:C1710.TEST
 	
 	Form:C1466.files.col:=$col
 	Form:C1466.text:=""
+	Form:C1466.chunk:=Null:C1517
 	
 	var $extract : cs:C1710.extract.extract
 	var $files; $tasks : Collection
