@@ -45,7 +45,7 @@ Function onExtract($worker : 4D:C1709.SystemWorker; $params : Object)
 			
 			var $text_splitter : cs:C1710.text_splitter.text_splitter
 			$text_splitter:=cs:C1710.text_splitter.text_splitter.new()
-			$text_splitter.chunk({data: $file; file: $item.text; capacity: "100..200"; overlap: 10; tiktoken: True:C214}; Form:C1466.onChunk)
+			$text_splitter.chunk({data: $file; file: $item.text; capacity: "100..200"; overlap: 70; tiktoken: True:C214}; Form:C1466.onChunk)
 			
 		End if 
 		
