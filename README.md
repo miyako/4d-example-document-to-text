@@ -8,5 +8,6 @@
 
 * [`miyako/extract`](https://github.com/miyako/extract)
 * [`miyako/text-splitter`](https://github.com/miyako/text-splitter)
+* [`miyako/fastcdc`](https://github.com/miyako/fastcdc)
 
 <img width="850" height="auto" alt="" src="https://github.com/user-attachments/assets/36c25976-752d-49d9-bc4e-d4e95a948540" />
