@@ -1,6 +1,9 @@
 text.label {
 	color: #9090F0;
 }
+radio.method {
+	stroke: #909090;
+}
 listbox {
 	resizingMode: legacy;
 	sortable: false;

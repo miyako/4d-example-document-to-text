@@ -7,6 +7,10 @@
 		"text splitter": {
 			"github": "miyako/text-splitter",
 			"version": "latest"
+		},
+		"fastcdc": {
+			"github": "miyako/fastcdc",
+			"version": "latest"
 		}
 	}
 }

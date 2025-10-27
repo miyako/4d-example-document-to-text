@@ -17,7 +17,6 @@
 	"events": [
 		"onLoad",
 		"onDrop",
-		"onDragOver",
 		"onUnload",
 		"onSelectionChange"
 	],
@@ -59,7 +58,9 @@
 					"top": 60,
 					"width": 238,
 					"height": 305,
-					"events": [],
+					"events": [
+						"onDragOver"
+					],
 					"listboxType": "collection",
 					"dragging": "none",
 					"dropping": "custom",
@@ -68,6 +69,7 @@
 					"currentItemPositionSource": "Form:C1466.files.pos",
 					"selectedItemsSource": "Form:C1466.files.sel",
 					"sizingY": "grow",
+					"method": "ObjectMethods/files.4dm",
 					"columns": [
 						{
 							"header": {
@@ -122,12 +124,42 @@
 					"sizingX": "grow",
 					"sizingY": "grow",
 					"dataSourceTypeHint": "object"
+				},
+				"FastCDC": {
+					"type": "radio",
+					"text": "Use FastCDC for chunking",
+					"top": 17,
+					"left": 346,
+					"width": 198,
+					"height": 19,
+					"events": [
+						"onClick"
+					],
+					"dataSourceTypeHint": "boolean",
+					"dataSource": "Form:C1466.FastCDC",
+					"class": "method",
+					"radioGroup": "method"
+				},
+				"text_splitter": {
+					"type": "radio",
+					"text": "Use text-splitter for chunking",
+					"top": 17,
+					"left": 546,
+					"width": 338,
+					"height": 19,
+					"events": [
+						"onClick"
+					],
+					"dataSourceTypeHint": "boolean",
+					"dataSource": "Form:C1466.text_splitter",
+					"class": "method",
+					"radioGroup": "method"
 				}
 			}
 		}
 	],
 	"method": "method.4dm",
-	"geometryStamp": 129,
+	"geometryStamp": 163,
 	"editor": {
 		"activeView": "View 1",
 		"defaultView": "View 1",

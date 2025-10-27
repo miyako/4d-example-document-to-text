@@ -16,15 +16,6 @@ Case of
 		
 		Form:C1466.onUnload()
 		
-	: ($event.code=On Drag Over:K2:13)
-		
-		Case of 
-			: (["files"].includes($event.objectName))
-				return Form:C1466.onFilesDragOver()
-		End case 
-		
-		return -1
-		
 	: ($event.code=On Drop:K2:12)
 		
 		Case of 

@@ -1,4 +1,10 @@
+property text_splitter : Boolean
+property FastCDC : Boolean
+
 Class constructor
+	
+	This:C1470.text_splitter:=True:C214
+	This:C1470.FastCDC:=False:C215
 	
 Function onLoad() : cs:C1710.TEST
 	
@@ -43,9 +49,20 @@ Function onExtract($worker : 4D:C1709.SystemWorker; $params : Object)
 		Else 
 			$item.text:=$worker.response
 			
-			var $text_splitter : cs:C1710.text_splitter.text_splitter
-			$text_splitter:=cs:C1710.text_splitter.text_splitter.new()
-			$text_splitter.chunk({data: $file; file: $item.text; capacity: "100..200"; overlap: 70; tiktoken: True:C214}; Form:C1466.onChunk)
+			Case of 
+				: (Form:C1466.text_splitter)
+					
+					var $text_splitter : cs:C1710.text_splitter.text_splitter
+					$text_splitter:=cs:C1710.text_splitter.text_splitter.new()
+					$text_splitter.chunk({data: $file; file: $item.text; capacity: "100..200"; overlap: 70; tiktoken: True:C214}; Form:C1466.onChunk)
+					
+				: (Form:C1466.FastCDC)
+					
+					var $FastCDC : cs:C1710.FastCDC.FastCDC
+					$FastCDC:=cs:C1710.FastCDC.FastCDC.new()
+					$FastCDC.chunk({data: $file; file: $item.text; minSize: 500; maxSize: 2000}; Form:C1466.onChunk)
+					
+			End case 
 			
 		End if 
 		
@@ -68,6 +85,7 @@ Function onFilesSelect() : cs:C1710.TEST
 	
 Function onFilesDragOver() : Integer
 	
+	var $path : Text
 	$path:=Get file from pasteboard:C976(1)
 	
 	If (Test path name:C476($path)=Is a folder:K24:2) || (Test path name:C476($path)=Is a document:K24:1)
@@ -81,7 +99,10 @@ Function onFilesDrop() : cs:C1710.TEST
 	var $col : Collection
 	$col:=[]
 	
+	var $path : Text
 	$path:=Get file from pasteboard:C976(1)
+	
+	var $i : Integer
 	
 	Case of 
 		: (Test path name:C476($path)=Is a folder:K24:2)
